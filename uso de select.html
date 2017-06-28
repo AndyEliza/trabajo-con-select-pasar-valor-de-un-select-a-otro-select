@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Uso de select</title>
+</head>
+<body>
+<select multiple="" id="izquierda">
+  <option value="volvo">Volvo</option>
+  <option value="mazda">Mazda</option>
+  <option value="chevrolet">Chevrolet</option>
+  <option value="kia">Kia</option>
+  <option value="ford">Ford</option>
+</select>
+
+<input type="button" value="-->" onclick="Mover()"></input>
+<input type="button" value="<--" onclick="Volver()"></input>
+
+<select multiple id="derecha">
+ 
+</select>
+
+<script type="text/javascript">
+function Mover(argument) {
+	
+	obj=document.getElementById('izquierda'); 
+    if (obj.selectedIndex==-1) return; 
+    valor=obj.value; 
+    txt=obj.options[obj.selectedIndex].text; 
+    obj.options[obj.selectedIndex]=null; 
+    obj2=document.getElementById('derecha'); 
+    opc = new Option(txt,valor); 
+    eval(obj2.options[obj2.options.length]=opc);   
+}
+
+function Volver(argument) {
+	
+	obj=document.getElementById('derecha'); 
+    if (obj.selectedIndex==-1) return; 
+    valor=obj.value; 
+    txt=obj.options[obj.selectedIndex].text; 
+    obj.options[obj.selectedIndex]=null; 
+    obj2=document.getElementById('izquierda'); 
+    opc = new Option(txt,valor); 
+    eval(obj2.options[obj2.options.length]=opc);   
+}
+
+
+	 
+</SCRIPT>
+</script>
+</body>
+</html>
